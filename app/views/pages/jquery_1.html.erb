@@ -1,18 +1,3 @@
-<!-- <p>
-  <a id="my-click">Click Me</a>
-</p>
-
-<div id="foo" style="border: 1px solid red;">
-  <p>bar</p>
-</div>
-
-
- <script>
- 	$("#my-click").click(function(){
- 		$("#foo").before('<h1>zoo</h1>');
- 	})
- </script> -->
-
 
  <script>
  // 这是 javascript 注解
@@ -31,3 +16,121 @@
   <div id="foo" style="border: 1px solid red;">
     <p>bar</p>
   </div>
+
+
+ 
+<!-- 显示时间 -->
+
+<script>
+function displayDate(){
+  document.getElementById("demo").innerHTML=Date();
+}
+</script>
+
+
+<h1>我的第一个 JavaScript 程序</h1>
+<p id="demo">这是一个段落</p>
+
+<button type="button" onclick="displayDate()">显示日期</button>
+
+<!-- 直接输入HTML文本 -->
+<p>
+JavaScript 能够直接写入 HTML 输出流中：
+</p>
+<script>
+document.write("<h1>这是一个标题</h1>");
+document.write("<p>这是一个段落。</p>");
+</script>
+
+<!-- // 点击事件 -->
+<h1>我的第一个 JavaScript</h1>
+<p>
+JavaScript 能够对事件作出反应。比如对按钮的点击：
+</p>
+<button type="button" onclick="alert('欢迎!')">点我!</button>
+
+<!-- 改变HTML元素方法1 -->
+<script>
+ $(document).ready(function(){
+    $("#myclick").click(function(){
+      $("#fooo").html('<h1>Hello JavaScript!</h1>');
+    })
+ })
+  </script>
+
+  <p>
+    <a id="myclick">点击这里</a>
+  </p>
+
+  <div id="fooo">
+    <p>JavaScript 能改变 HTML 元素的内容。</p>
+  </div>
+
+
+<!-- 改变HTML元素方法2 -->
+  <h1>我的第一段 JavaScript</h1>
+<p id="demo1">
+JavaScript 能改变 HTML 元素的内容。
+</p>
+<script>
+function myFunction()
+{
+  x=document.getElementById("demo1");  // 找到元素
+  x.innerHTML="Hello JavaScript!";    // 改变内容
+}
+</script>
+<button type="button" onclick="myFunction()">点击这里</button>
+
+
+<!-- 改变 HTML 图像 -->
+<script>
+function changeImage()
+{
+  element=document.getElementById('myimage')
+  if (element.src.match("bulbon"))
+  {
+      element.src="/public/pic_bulboff.gif";
+    }
+  else
+   {
+      element.src="/public/pic_bulbon.gif";
+   }
+}
+</script>
+<img id="myimage" onclick="changeImage()"
+src="/public/pic_bulboff.gif" width="100" height="180">
+<p>点击灯泡就可以打开或关闭这盏灯</p>
+
+
+<!-- 改变HTML元素样式 -->
+<h1>我的第一段 JavaScript</h1>
+<p id="demo2">
+JavaScript 能改变 HTML 元素的样式。
+</p>
+<script>
+function myFunction()
+{
+  x=document.getElementById("demo2") // 找到元素
+  x.style.color="#ff0000";          // 改变样式
+}
+</script>
+<button type="button" onclick="myFunction()">点击这里</button>
+
+<!-- 验证输入 -->
+<h1>我的第一段 JavaScript</h1>
+<p>请输入数字。如果输入值不是数字，浏览器会弹出提示框。</p>
+<input id="demo3" type="text">
+<script>
+function myFunction()
+{
+  var x=document.getElementById("demo3").value;
+  if(x==""||isNaN(x))
+  {
+    alert("不是数字");
+  }
+}
+</script>
+<button type="button" onclick="myFunction()">点击这里</button>
+
+
+
